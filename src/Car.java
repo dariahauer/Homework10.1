@@ -6,6 +6,11 @@ public class Car extends Vehicle {
         this.aircondition = aircondition;
     }
 
+    public Car(String name,boolean aircondition) {
+        super(name);
+        this.aircondition = aircondition;
+    }
+
     public boolean isAircondition() {
         return aircondition;
     }
@@ -19,11 +24,12 @@ public class Car extends Vehicle {
         return super.getInfo() + " , Air Condition: " + aircondition;
     }
 
-    public double carRange() {
+    @Override
+     double range() {
         if (aircondition) {
             return (getCapacity() / (getBurning() + 0.8)) * 100;
         } else {
-            return super.vehicleRange();
+            return super.range();
 
         }
 

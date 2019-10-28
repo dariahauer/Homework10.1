@@ -9,6 +9,10 @@ public class Vehicle {
         this.burning = burning;
     }
 
+    public Vehicle(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
@@ -37,7 +41,7 @@ public class Vehicle {
         return "Name: " + name + " ,Capacity: " + capacity + " ,Burning: " + burning;
     }
 
-    double vehicleRange() {
+    double range() {
         double vehicleRange;
         return capacity / burning * 100;
     }

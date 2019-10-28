@@ -6,6 +6,10 @@ public class Truck extends Car {
         this.loadWeight = loadWeight;
     }
 
+    public Truck(String name, boolean aircondition) {
+        super(name, aircondition);
+    }
+
     public double getLoadWeight() {
         return loadWeight;
     }
@@ -14,8 +18,8 @@ public class Truck extends Car {
         this.loadWeight = loadWeight;
     }
 
-
-    public double truckRange() {
+    @Override
+    public double range() {
         if (isAircondition()) {
             return (getCapacity() / ((getLoadWeight() / 100) * 0.5) + (getBurning() + 1.6)) * 100;
         } else {
