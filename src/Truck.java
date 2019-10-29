@@ -20,11 +20,18 @@ public class Truck extends Car {
 
     @Override
     public double range() {
+
         if (isAircondition()) {
-            return (getCapacity() / ((getLoadWeight() / 100) * 0.5) + (getBurning() + 1.6)) * 100;
+            double extra=1.6;
+            return rangeBasic() + (getBurning() + extra) * 100;
         } else {
-            return (getCapacity() / ((getLoadWeight() / 100) * 0.5) + getBurning()) * 100;
+            return rangeBasic() + getBurning() * 100;
         }
+    }
+
+    public double rangeBasic(){
+        double extra = 0.5;
+        return (getCapacity() / ((getLoadWeight() / 100) * extra));
     }
 
     @Override

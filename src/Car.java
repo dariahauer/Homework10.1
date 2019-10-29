@@ -6,7 +6,7 @@ public class Car extends Vehicle {
         this.aircondition = aircondition;
     }
 
-    public Car(String name,boolean aircondition) {
+    public Car(String name, boolean aircondition) {
         super(name);
         this.aircondition = aircondition;
     }
@@ -19,20 +19,28 @@ public class Car extends Vehicle {
         this.aircondition = aircondition;
     }
 
+    boolean airOn() {
+        return aircondition = true;
+    }
+
     @Override
     public String getInfo() {
         return super.getInfo() + " , Air Condition: " + aircondition;
     }
 
     @Override
-     double range() {
+    double range() {
+        double extra = 0.8;
         if (aircondition) {
-            return (getCapacity() / (getBurning() + 0.8)) * 100;
+            return (getCapacity() / (getBurning() + extra)) * 100;
         } else {
             return super.range();
 
         }
 
+
     }
+
+
 }
 

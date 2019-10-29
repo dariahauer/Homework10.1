@@ -42,7 +42,6 @@ public class Vehicle {
     }
 
     double range() {
-        double vehicleRange;
         return capacity / burning * 100;
     }
 }
